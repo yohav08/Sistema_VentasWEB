@@ -29,34 +29,27 @@ public class ProductoDAO {
     
     public Producto buscar(int id){
         
-            Producto p=new Producto();
-            String sql = "select * from producto where Idproducto="+id;
-            try {
+        Producto p=new Producto();
+        String sql = "select * from producto where Idproducto="+id;
+        try {
             con=cn.Conexion();
             ps = con.prepareStatement(sql);
             rs=ps.executeQuery();
             while(rs.next()){
-        
-
                 p.setId(rs.getInt(1));
                 p.setNom(rs.getString(2));
                 p.setPrecio(rs.getDouble(3));
                 p.setStock(rs.getInt(4));
                 p.setEstado(rs.getString(5));
-//JOptionPane.showMessageDialog(null, p);
             }
-            
-           
         } catch (SQLException e) {
-                System.out.println("problema en productoDAO - buscar "+e.getMessage());
+            System.out.println("Error: "+e.getMessage());
         }
-
-             return p;
+        return p;
     }
     
     public int actualizarstock(int id, int stock){
-     String sql = "update producto set Stock=? where Idproducto=?";
-        
+        String sql = "update producto set Stock=? where Idproducto=?";
         try {
             con=cn.Conexion();
             ps=con.prepareStatement(sql);
@@ -64,9 +57,8 @@ public class ProductoDAO {
             ps.setInt(2, id);
             ps.executeUpdate();
         } catch (SQLException e) {
-            System.out.println("error en actualizarstock - productoDAO "+e.getMessage());
+            System.out.println("Error: "+e.getMessage());
         }
-        
         return r;
     }
     
