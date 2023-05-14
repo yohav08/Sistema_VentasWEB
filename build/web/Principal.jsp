@@ -18,37 +18,36 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a style="margin-left: 10px; border: none" class="nav-link active" href="#">Home</a>
-                    </li>
-                    
+                        <a style="margin-left: 10px; border: none" class="btn-lg nav-link active" href="#">Home</a>
+                    </li>                    
                     <li class="nav-item">
-                        <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="#">Producto</a>
-                    </li>
-                    <li class="nav-item">
-                        <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="#">Empleado</a>
+                        <a style="margin-left: 10px; border: none" class="btn-lg btn btn-outline-light" href="#">Producto</a>
                     </li>
                     <li class="nav-item">
-                        <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="#">Cliente</a>
+                        <a style="margin-left: 10px; border: none" class="btn-lg btn btn-outline-light" href="#">Empleado</a>
                     </li>
                     <li class="nav-item">
-                        <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="#">Nueva Venta</a>
+                        <a style="margin-left: 10px; border: none" class="btn-lg btn btn-outline-light" href="#">Cliente</a>
                     </li>
-
+                    <li class="nav-item">
+                        <a style="margin-left: 10px; border: none" class="btn-lg btn btn-outline-light" href="#">Nueva Venta</a>
+                    </li>
                 </ul>
+                
                 <div class="dropdown">
-                    <button style="border: none" class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Usuario Ingresado
+                    <button style="border: none" class="btn-lg btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        ${usuario.getNom()}
                     </button>
                     <ul class="dropdown-menu text-center">
                         <li><a class="dropdown-item" href="#"> <img src="img/user.png" alt="60" width="60"/> </a></li>
-                        <li><a class="dropdown-item" href="#">usuario</a></li>
+                        <li><a class="dropdown-item" href="#">${usuario.getNom()}</a></li>
                         <li><a class="dropdown-item" href="#">usuario@gmail.com</a></li>
-                        <div class="dropdown-divider">
-                            <a class="dropdown-item" href="#">Salir</a>
-                        </div>
+                        <div class="dropdown-divider"></div>
+                        <form action="Validar" method="POST">
+                            <button name="accion" value="Salir" class="dropdown-item" href="#">Salir</button>
+                        </form>
                     </ul>
-                </div>
-
+                </div> 
             </div>
         </nav>
         
