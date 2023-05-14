@@ -36,13 +36,16 @@
 
                 </ul>
                 <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Dropdown button
+                    <button style="border: none" class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Usuario Ingresado
                     </button>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    <ul class="dropdown-menu text-center">
+                        <li><a class="dropdown-item" href="#"> <img src="img/user.png" alt="60" width="60"/> </a></li>
+                        <li><a class="dropdown-item" href="#">usuario</a></li>
+                        <li><a class="dropdown-item" href="#">usuario@gmail.com</a></li>
+                        <div class="dropdown-divider">
+                            <a class="dropdown-item" href="#">Salir</a>
+                        </div>
                     </ul>
                 </div>
 
