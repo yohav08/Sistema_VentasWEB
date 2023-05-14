@@ -53,7 +53,7 @@ public class Controlador extends HttpServlet {
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+         
         String menu = request.getParameter("menu");
         String accion = request.getParameter("accion");
         
@@ -71,38 +71,28 @@ public class Controlador extends HttpServlet {
                 break;
                 
                 case "Agregar":
-                    String dni = request.getParameter("txtDni");
-                    String nom = request.getParameter("txtNombres");
-                    String tel = request.getParameter("txtTel");
-                    String est = request.getParameter("txtEstado");
-                    String user = request.getParameter("txtUser");
-                    em.setDni(dni);
-                    em.setNom(nom);
-                    em.setTel(tel);
-                    em.setEstado(est);
-                    em.setUser(user);
+                    em.setDni(request.getParameter("txtDni"));
+                    em.setNom(request.getParameter("txtNombres"));
+                    em.setTel(request.getParameter("txtTel"));
+                    em.setEstado(request.getParameter("txtEstado"));
+                    em.setUser(request.getParameter("txtUser"));
                     edao.agregar(em);
                     request.getRequestDispatcher("Controlador?menu=Empleado&accion=Listar").forward(request, response);
                 break;
                 
                 case "Editar":
-                    ide=Integer.parseInt(request.getParameter("id"));
+                    ide = Integer.parseInt(request.getParameter("id"));
                     Empleado e = edao.listarId(ide);
                     request.setAttribute("empleado", e);
                     request.getRequestDispatcher("Controlador?menu=Empleado&accion=Listar").forward(request, response);
                 break;
                 
                 case "Actualizar":
-                    String dni1 = request.getParameter("txtDni");
-                    String nom1 = request.getParameter("txtNombres");
-                    String tel1 = request.getParameter("txtTel");
-                    String est1 = request.getParameter("txtEstado");
-                    String user1 = request.getParameter("txtUser");
-                    em.setDni(dni1);
-                    em.setNom(nom1);
-                    em.setTel(tel1);
-                    em.setEstado(est1);
-                    em.setUser(user1);
+                    em.setDni(request.getParameter("txtDni"));
+                    em.setNom(request.getParameter("txtNombres"));
+                    em.setTel(request.getParameter("txtTel"));
+                    em.setEstado(request.getParameter("txtEstado"));
+                    em.setUser(request.getParameter("txtUser"));
                     em.setId(ide);
                     edao.actualizar(em);
                     request.getRequestDispatcher("Controlador?menu=Empleado&accion=Listar").forward(request, response);
@@ -118,7 +108,6 @@ public class Controlador extends HttpServlet {
                 
             }
             request.getRequestDispatcher("Empleado.jsp").forward(request, response);
-            
         }
         if (menu.equals("Cliente")) {
             request.getRequestDispatcher("Clientes.jsp").forward(request, response);
@@ -165,11 +154,10 @@ public class Controlador extends HttpServlet {
 
                     for (int i = 0; i < lista.size(); i++) {
                         totalPagar = totalPagar + lista.get(i).getSubtotal();
-                    }
-//                   
+                    }                  
                     request.setAttribute("totalPagar", totalPagar);
                     request.setAttribute("lista", lista);
-//                    request.setAttribute("nserie", numeroserie);
+                    request.setAttribute("nserie", numeroserie);
                 break;
                 
                 case "GenerarVenta":

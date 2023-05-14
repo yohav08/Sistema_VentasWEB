@@ -72,7 +72,7 @@ public class EmpleadoDAO {
     }
     
     public int agregar(Empleado em){
-        String sql="inser into empleado(Dni, Nombres, Telefono, Estado, User) values(?,?,?,?,?)";
+        String sql="insert into empleado(Dni, Nombres, Telefono, Estado, User) values(?,?,?,?,?)";
         try {
             con = cn.Conexion();
             ps = con.prepareStatement(sql);
@@ -98,31 +98,29 @@ public class EmpleadoDAO {
             rs=ps.executeQuery();
             
             while (rs.next()) {
-                emp.setDni(rs.getString(1)); 
-                emp.setNom(rs.getString(2)); 
-                emp.setTel(rs.getString(3)); 
-                emp.setEstado(rs.getString(4)); 
-                emp.setUser(rs.getString(5)); 
+                emp.setDni(rs.getString(2)); 
+                emp.setNom(rs.getString(3)); 
+                emp.setTel(rs.getString(4)); 
+                emp.setEstado(rs.getString(5)); 
+                emp.setUser(rs.getString(6)); 
             }
         } catch (Exception e) {
             System.out.println("error al listar " + e.getMessage());
         }
         return emp;
     }    
-    public int actualizar(Empleado em){
-        String sql="update empleado set Dni=?, Nombres=?, Telefono=?, Estado=?, User=? where IdEmpleado=?";
+    public int actualizar(Empleado em) {
+        String sql = "update empleado set Dni=?, Nombres=?, Telefono=?, Estado=?, User=? where IdEmpleado=?";
         try {
-            con=cn.Conexion();
-            ps=con.prepareStatement(sql);
+            con = cn.Conexion();
+            ps = con.prepareStatement(sql);
             ps.setString(1, em.getDni());
             ps.setString(2, em.getNom());
             ps.setString(3, em.getTel());
             ps.setString(4, em.getEstado());
             ps.setString(5, em.getUser());
-            
             ps.setInt(6, em.getId());
             ps.executeUpdate();
-            
         } catch (Exception e) {
         }
         return r;
