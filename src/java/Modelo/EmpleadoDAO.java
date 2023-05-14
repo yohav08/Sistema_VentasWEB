@@ -74,8 +74,8 @@ public class EmpleadoDAO {
     public int agregar(Empleado em){
         String sql="inser into empleado(Dni, Nombres, Telefono, Estado, User) values(?,?,?,?,?)";
         try {
-            con=cn.Conexion();
-            ps=con.prepareStatement(sql);
+            con = cn.Conexion();
+            ps = con.prepareStatement(sql);
             ps.setString(1, em.getDni());
             ps.setString(2, em.getNom());
             ps.setString(3, em.getTel());
@@ -119,6 +119,7 @@ public class EmpleadoDAO {
             ps.setString(3, em.getTel());
             ps.setString(4, em.getEstado());
             ps.setString(5, em.getUser());
+            
             ps.setInt(6, em.getId());
             ps.executeUpdate();
             
