@@ -101,7 +101,7 @@
                     </div>
                     <div class="card-footer d-flex">
                         <div class="col-sm-6"><!-- comment -->
-                            <input type="submit" name="accion" value="Generar Venta" class="btn btn-danger">
+                            <a href="Controlador?menu=NuevaVenta&accion=GenerarVenta"  class="btn btn-success" >Generar Venta</a>
                             <input type="submit" name="accion" value="Cancelar" class="btn btn-danger">
                         </div>
                         <div class="col-sm-4 ml-auto">
