@@ -36,26 +36,26 @@
                             </div>
                             <div class="form-group d-flex">
                                 <div class="col-sm-6 d-flex">
-                                    <input type="text" name="codigoproducto" class="form-control" placeholder="Codigo">
-                                    <input type="submit" name="accion" value="Buscar" class="btn btn-outline-info">
+                                    <input type="text" name="codigoproducto" value="${producto.getId()}" class="form-control" placeholder="Codigo">
+                                    <button type="submit" name="accion" value="BuscarProducto" class="btn btn-outline-info">Buscar</button>
                                 </div>
                                 <div class="col-sm-6">
-                                    <input type="text" name="nomproducto" class="form-control" placeholder="Datos Producto">
+                                    <input type="text" name="nomproducto" value="${producto.getNom()}" class="form-control" placeholder="Datos Producto">
                                 </div>
                             </div>
                             <div class="form-group d-flex">
                                 <div class="col-sm-6 d-flex">
-                                    <input type="text" name="precio" class="form-control" placeholder="S/.0.00">
+                                    <input type="text" name="precio" value="${producto.getPrecio()}" class="form-control" placeholder="S/.0.00">
                                 </div>
                                 <div class="col-sm-3">
                                     <input type="number" name="cant" value="1" placeholder="" class="form-control">
                                 </div>
                                 <div class="col-sm-3">
-                                    <input type="text" name="stock"placeholder="Stock" class="form-control">
+                                    <input type="text" name="stock" value="${producto.getStock()}" placeholder="Stock" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <button type="submit" name="accion" value="Agregar" class="btn btn-outline-info"> Agregar </button>
+                                <button type="submit" name="accion" value="Agregar" class="btn btn-outline-info"> Agregar Producto</button>
                             </div>  
                         </div>
                     </form>
@@ -82,18 +82,20 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <c:forEach var="list" items="${lista}">
                                 <tr>
-                                    <td></td> 
-                                    <td></td> 
-                                    <td></td> 
-                                    <td></td> 
-                                    <td></td> 
-                                    <td></td> 
+                                    <td>${list.getItem()}</td>
+                                    <td>${list.getIdproducto()}</td> 
+                                    <td>${list.getDescripcionP()}</td> 
+                                    <td>${list.getPrecio()}</td>
+                                    <td>${list.getCantidad()}</td> 
+                                    <td>${list.getSubtotal()}</td> 
                                     <td class="d-flex">
                                         <a href="" class="btn btn-warning">Editar</a>
                                         <a href="" class="btn btn-danger" style="margin-left: 10 px">Delete</a>
                                     </td> 
                                 </tr>
+                                </c:forEach>
                             </tbody>
                         </table>
                     </div>
@@ -101,6 +103,9 @@
                         <div class="col-sm-6"><!-- comment -->
                             <input type="submit" name="accion" value="Generar Venta" class="btn btn-danger">
                             <input type="submit" name="accion" value="Cancelar" class="btn btn-danger">
+                        </div>
+                        <div class="col-sm-4 ml-auto">
+                            <input type="text" name="txtTotal" value="${totalPagar}" class="form-control">
                         </div>
                     </div>
                 </div>
