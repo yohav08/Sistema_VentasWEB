@@ -18,19 +18,19 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a style="margin-left: 10px; border: none" class="btn-lg nav-link active" href="#">Home</a>
+                        <a style="margin-left: 10px; border: none"  class="btn-lg nav-link active" href="#">Home</a>
                     </li>                    
                     <li class="nav-item">
-                        <a style="margin-left: 10px; border: none" class="btn-lg btn btn-outline-light" href="#">Producto</a>
+                        <a style="margin-left: 10px; border: none"  class="btn-lg btn btn-outline-light" href="Controlador?accion=Producto" target="myFrame">Producto</a>
+                    </li>
+                    <li  class="nav-item">
+                        <a style="margin-left: 10px; border: none" class="btn-lg btn btn-outline-light" href="Controlador?accion=Empleado" target="myFrame">Empleado</a>
                     </li>
                     <li class="nav-item">
-                        <a style="margin-left: 10px; border: none" class="btn-lg btn btn-outline-light" href="#">Empleado</a>
+                        <a style="margin-left: 10px; border: none" class="btn-lg btn btn-outline-light" href="Controlador?accion=cliente" target="myFrame">Cliente</a>
                     </li>
                     <li class="nav-item">
-                        <a style="margin-left: 10px; border: none" class="btn-lg btn btn-outline-light" href="#">Cliente</a>
-                    </li>
-                    <li class="nav-item">
-                        <a style="margin-left: 10px; border: none" class="btn-lg btn btn-outline-light" href="#">Nueva Venta</a>
+                        <a style="margin-left: 10px; border: none" class="btn-lg btn btn-outline-light" href="Controlador?accion=NuevaVenta" target="myFrame">Nueva Venta</a>
                     </li>
                 </ul>
                 
@@ -44,12 +44,18 @@
                         <li><a class="dropdown-item" href="#">usuario@gmail.com</a></li>
                         <div class="dropdown-divider"></div>
                         <form action="Validar" method="POST">
-                            <button name="accion" value="Salir" class="dropdown-item" href="#">Salir</button>
+                            <button id="accion" value="Salir" class="dropdown-item" href="#">Salir</button>
                         </form>
                     </ul>
                 </div> 
             </div>
         </nav>
+        
+        <div class="m-2"style="height: 550px">
+            <div>
+            <iframe name="myFrame" style="height: 100%; width: 100%"></iframe>
+            </div>
+        </div>
         
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
