@@ -21,16 +21,16 @@
                         <a style="margin-left: 10px; border: none"  class="btn-lg nav-link active" href="#">Home</a>
                     </li>                    
                     <li class="nav-item">
-                        <a style="margin-left: 10px; border: none"  class="btn-lg btn btn-outline-light" href="Controlador?accion=Producto" target="myFrame">Producto</a>
+                        <a style="margin-left: 10px; border: none"  class="btn-lg btn btn-outline-light" href="Controlador?menu=Producto" target="myFrame">Producto</a>
                     </li>
                     <li  class="nav-item">
-                        <a style="margin-left: 10px; border: none" class="btn-lg btn btn-outline-light" href="Controlador?accion=Empleado" target="myFrame">Empleado</a>
+                        <a style="margin-left: 10px; border: none" class="btn-lg btn btn-outline-light" href="Controlador?menu=Empleado&accion=Listar" target="myFrame">Empleado</a>
                     </li>
                     <li class="nav-item">
-                        <a style="margin-left: 10px; border: none" class="btn-lg btn btn-outline-light" href="Controlador?accion=cliente" target="myFrame">Cliente</a>
+                        <a style="margin-left: 10px; border: none" class="btn-lg btn btn-outline-light" href="Controlador?menu=Cliente" target="myFrame">Cliente</a>
                     </li>
                     <li class="nav-item">
-                        <a style="margin-left: 10px; border: none" class="btn-lg btn btn-outline-light" href="Controlador?accion=NuevaVenta" target="myFrame">Nueva Venta</a>
+                        <a style="margin-left: 10px; border: none" class="btn-lg btn btn-outline-light" href="Controlador?menu=NuevaVenta" target="myFrame">Nueva Venta</a>
                     </li>
                 </ul>
                 
@@ -52,9 +52,7 @@
         </nav>
         
         <div class="m-2"style="height: 550px">
-            <div>
-            <iframe name="myFrame" style="height: 100%; width: 100%"></iframe>
-            </div>
+            <iframe name="myFrame" style="height: 100%; width: 100%; border: none"></iframe>
         </div>
         
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>

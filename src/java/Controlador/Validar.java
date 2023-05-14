@@ -23,7 +23,7 @@ public class Validar extends HttpServlet {
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+        response.setContentType("text/html;charset=UTF-8");
     }
 
     @Override
@@ -43,7 +43,7 @@ public class Validar extends HttpServlet {
             em=edao.validar(user, pass);
             if (em.getUser()!=null) {
                 request.setAttribute("usuario", em);
-                request.getRequestDispatcher("Controlador?accion=Principal").forward(request, response);
+                request.getRequestDispatcher("Controlador?menu=Principal").forward(request, response);
             }else{
                 request.getRequestDispatcher("index.jsp").forward(request, response);
             }  
@@ -52,11 +52,6 @@ public class Validar extends HttpServlet {
         }
     }
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
     @Override
     public String getServletInfo() {
         return "Short description";
