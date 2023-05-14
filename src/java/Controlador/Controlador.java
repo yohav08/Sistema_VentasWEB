@@ -4,6 +4,8 @@
  */
 package Controlador;
 
+import Modelo.Cliente;
+import Modelo.ClienteDAO;
 import Modelo.Empleado;
 import Modelo.EmpleadoDAO;
 import java.io.IOException;
@@ -22,6 +24,9 @@ public class Controlador extends HttpServlet {
     
     Empleado em = new Empleado();
     EmpleadoDAO edao = new EmpleadoDAO();
+    Cliente c = new Cliente();
+    ClienteDAO cdao = new ClienteDAO();
+    String numeroserie;
     int ide;
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -87,7 +92,8 @@ public class Controlador extends HttpServlet {
                     request.getRequestDispatcher("Controlador?menu=Empleado&accion=Listar").forward(request, response);
                 break;
                 default:
-                    throw new AssertionError();
+                    request.getRequestDispatcher("Controlador?menu=Empleado&accion=Listar").forward(request, response);
+                
             }
             request.getRequestDispatcher("Empleado.jsp").forward(request, response);
             
@@ -99,6 +105,17 @@ public class Controlador extends HttpServlet {
             request.getRequestDispatcher("Producto.jsp").forward(request, response);
         }
         if (menu.equals("NuevaVenta")) {
+            switch (accion) {
+                case "BuscarCliente":
+                    String dni = request.getParameter("codigocliente");
+                    c.setDni(dni);
+                    c = cdao.buscar(dni);
+                    request.setAttribute("c", c);
+                    request.setAttribute("nserie", numeroserie);
+                break;
+                default:
+                    request.getRequestDispatcher("RegistrarVenta.jsp").forward(request, response);
+            }
             request.getRequestDispatcher("RegistrarVenta.jsp").forward(request, response);
         }
     }
