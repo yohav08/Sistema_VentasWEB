@@ -19,7 +19,7 @@ public class Conexion {
     String pass="";
     public Connection Conexion () {
         try {
-            Class. forName("com.mysql. jdbc. Driver");
+            Class. forName("com.mysql.jdbc.Driver");
             con=DriverManager. getConnection (url, user, pass);
         } catch (ClassNotFoundException | SQLException e) {
         }

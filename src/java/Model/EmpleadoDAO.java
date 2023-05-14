@@ -34,9 +34,9 @@ public class EmpleadoDAO {
                 em.setId(rs.getInt("IdEmpleado"));
                 em.setUser(rs.getString("User"));
                 em.setDni(rs.getString("Dni"));
-                em.setNom(rs.getString("Nombres"));
+                em.setNom(rs.getString("Nombres")); 
             }
-            
+                        
         } catch (Exception e) {
         }
         return em;
