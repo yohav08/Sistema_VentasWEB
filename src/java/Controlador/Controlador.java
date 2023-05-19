@@ -110,6 +110,48 @@ public class Controlador extends HttpServlet {
         }
         
         if (menu.equals("Cliente")) {
+            switch (accion) {
+                case "Listar":
+                    List listaC = cdao.listar();
+                    request.setAttribute("clientes", listaC);
+                    request.getRequestDispatcher("Clientes.jsp").forward(request, response);
+                    request.getRequestDispatcher("Controlador?menu=Cliente&accion=Listar").forward(request, response);
+                break;
+                
+                case "Agregar":
+                    c.setDni(request.getParameter("txtDni"));
+                    c.setNom(request.getParameter("txtNombres"));
+                    c.setDireccion(request.getParameter("txtDireccion"));
+                    c.setEstado(request.getParameter("txtEstado"));
+                    cdao.agregar(c);
+                    request.getRequestDispatcher("Controlador?menu=Cliente&accion=Listar").forward(request, response);
+                break;
+                
+                case "Editar":
+                    idc = Integer.parseInt(request.getParameter("id"));
+                    Cliente cl = cdao.listarId(idc);
+                    request.setAttribute("cliente", cl);
+                    request.getRequestDispatcher("Controlador?menu=Cliente&accion=Listar").forward(request, response);
+                break;
+                
+                case "Actualizar":
+                    c.setDni(request.getParameter("txtDni"));
+                    c.setNom(request.getParameter("txtNombres"));
+                    c.setDireccion(request.getParameter("txtDireccion"));
+                    c.setEstado(request.getParameter("txtEstado"));
+                    c.setId(idc);
+                    cdao.actualizar(c);
+                    request.getRequestDispatcher("Controlador?menu=Cliente&accion=Listar").forward(request, response);
+                break;
+                
+                case "Delete":
+                    idc = Integer.parseInt(request.getParameter("id"));
+                    cdao.delete(idc);
+                    request.getRequestDispatcher("Controlador?menu=Cliente&accion=Listar").forward(request, response);
+                break;
+                default:
+                    request.getRequestDispatcher("Controlador?menu=Cliente&accion=Listar").forward(request, response);
+            }
             request.getRequestDispatcher("Clientes.jsp").forward(request, response);
         }
         if (menu.equals("Producto")) {

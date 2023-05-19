@@ -15,7 +15,7 @@ public class Cliente {
     String Dni;
     String Nom;
     String Direccion;
-    String Es;
+    String Estado;
 
     public int getId() {
         return Id;
@@ -49,12 +49,12 @@ public class Cliente {
         this.Direccion = Direccion;
     }
 
-    public String getEs() {
-        return Es;
+    public String getEstado() {
+        return Estado;
     }
 
-    public void setEs(String Es) {
-        this.Es = Es;
+    public void setEstado(String Estado) {
+        this.Estado = Estado;
     }
 }
 

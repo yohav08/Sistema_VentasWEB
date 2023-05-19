@@ -36,7 +36,7 @@ public class ClienteDAO {
                 c.setDni(rs.getString(2));
                 c.setNom(rs.getString(3));
                 c.setDireccion(rs.getString(4));
-                c.setEs(rs.getString(5));
+                c.setEstado(rs.getString(5));
             }
         } catch (Exception e) {
             System.out.println("Error al buscar cliente" + e.getMessage());
@@ -58,7 +58,7 @@ public class ClienteDAO {
                 cl.setDni(rs.getString(2));
                 cl.setNom(rs.getString(3));
                 cl.setDireccion(rs.getString(4));
-                cl.setEs(rs.getString(5));
+                cl.setEstado(rs.getString(5));
                 lista.add(cl);
             }
         } catch (Exception e) {
@@ -75,7 +75,7 @@ public class ClienteDAO {
             ps.setString(1, cl.getDni());
             ps.setString(2, cl.getNom());
             ps.setString(3, cl.getDireccion());
-            ps.setString(4, cl.getEs());
+            ps.setString(4, cl.getEstado());
             ps.executeUpdate();
         } catch (Exception e) {
             System.out.println("Error al agregar" + e.getMessage());
@@ -94,7 +94,7 @@ public class ClienteDAO {
                 cl.setDni(rs.getString(2));
                 cl.setNom(rs.getString(3));
                 cl.setDireccion(rs.getString(4));
-                cl.setEs(rs.getString(5));
+                cl.setEstado(rs.getString(5));
             }
         } catch (Exception e) {
             System.out.println("Error al listar ID " + e.getMessage());
@@ -110,7 +110,7 @@ public class ClienteDAO {
             ps.setString(1, cl.getDni());
             ps.setString(2, cl.getNom());
             ps.setString(3, cl.getDireccion());
-            ps.setString(4, cl.getEs());
+            ps.setString(4, cl.getEstado());
             ps.setInt(5, cl.getId());
             ps.executeUpdate();
         } catch (Exception e) {
