@@ -81,7 +81,6 @@ public class ProductoDAO {
         } catch (Exception e) {
             System.out.println("Error al listar" + e.getMessage());
         }
-JOptionPane.showMessageDialog(null, lista);
         return lista;
     }
     

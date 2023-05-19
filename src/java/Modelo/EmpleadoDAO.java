@@ -41,7 +41,7 @@ public class EmpleadoDAO {
                 em.setNom(rs.getString("Nombres")); 
             }     
         } catch (Exception e) {
-            System.out.println("error al validar " + e.getMessage());
+            System.out.println("Error al validar: " + e.getMessage());
         }
         return em;
     }
@@ -66,7 +66,7 @@ public class EmpleadoDAO {
                 lista.add(em);
             }
         } catch (SQLException e) {
-            System.out.println("error al listar " + e.getMessage());
+            System.out.println("Error al listar: " + e.getMessage());
         }
         return lista;
     }
@@ -84,7 +84,7 @@ public class EmpleadoDAO {
             ps.executeUpdate();
             
         } catch (Exception e) {
-            System.out.println("error al listar " + e.getMessage());
+            System.out.println("Error al agregar: " + e.getMessage());
         }
         return r;
     }
@@ -105,7 +105,7 @@ public class EmpleadoDAO {
                 emp.setUser(rs.getString(6)); 
             }
         } catch (Exception e) {
-            System.out.println("error al listar " + e.getMessage());
+            System.out.println("Error al listarID: " + e.getMessage());
         }
         return emp;
     }    
@@ -122,17 +122,19 @@ public class EmpleadoDAO {
             ps.setInt(6, em.getId());
             ps.executeUpdate();
         } catch (Exception e) {
+            System.out.println("Error al Actualizar: " + e.getMessage());
         }
         return r;
     }
     
     public void delete(int id){
-        String sql="delete from empleado where IdEmpleado="+id;
+        String sql="delete from empleado where IdEmpleado="+id+": ";
         try {
             con=cn.Conexion();
             ps=con.prepareStatement(sql);
             ps.executeUpdate();
         } catch (Exception e) {
+            System.out.println("Error al Eliminar : " + e.getMessage());
         }
     }
     
