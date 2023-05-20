@@ -39,13 +39,13 @@
                             <input type="text" value="${empleado.getUser()}" name="txtUser" class="form-control">
                         </div> <br>
                         <div class="d-flex justify-content-between">
-                            <input style="margin-left: auto; margin-right: auto;" type="submit" name="accion" value="Agregar" class="col-sm-4 btn btn-info">
+                            <input style="margin-left: auto; margin-right: auto;" type="submit" name="accion" value="Agregar" class="col-sm-4 btn btn-primary">
                             <input style="margin-left: auto; margin-right: auto;" type="submit" name="accion" value="Actualizar" class="col-sm-4 btn btn-success">
                         </div>
                     </form>
                 </div>
             </div>
-            <div class="form-group col-sm-7">
+            <div style="margin: 15px;" class="d-block col-sm-7">
                 <table class="table table-hover">
                     <thead>
                         <tr>

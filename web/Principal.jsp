@@ -11,26 +11,32 @@
     
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Home</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
         
         <script>
+            window.addEventListener("load", (event) => {
+                //Agregar Página de Bienvenida
+                document.getElementById('text').innerHTML = '<header class="py-5"> <div class="container px-lg-5"><div class="p-4 p-lg-5 bg-light rounded-3 text-center"><div class="m-4 m-lg-5"><h1 class="display-5 fw-bold">¡Bienvenido al sistema de ventas!</h1><img src="img/logo.png" width="200"/> <br><p class="fs-4">Bienvenidos al sistema de ventas más innovador y eficiente del mercado.Nuestra misión es simplificar y potenciar las operaciones comerciales, brindando a nuestros clientes una experiencia única y satisfactoria en cada transacción. Nos proyectamos como la solución integral y líder en la gestión de ventas, con una visión de ser reconocidos como el referente en tecnología de ventas, ofreciendo una plataforma intuitiva y escalable que impulse el crecimiento y éxito de nuestros usuarios. Únase a nosotros y descubra una nueva forma de impulsar su negocio hacia el éxito.</p></div></div></div></header><section class="pt-4" ><div class="container px-lg-5"><div class="row gx-lg-5"><div class="col-lg-6 col-auto-4 mb-5"><div class="card bg-light border-0 h-100"><div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0"><div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4 py-3"><i><img src="./img/venta3.png" alt="70"/></i></div><h2 class="fs-4 fw-bold">Ventas Intuitivas</h2><p class="mb-0">Sistema fácil de usar y comprender para los usuarios para interactuar de manera natural y sin dificultades.</p></div></div></div><div class="col-lg-6 col-auto-4 mb-5"><div class="card bg-light border-0 h-100"><div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0"><div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4 py-3 px-3"><i><img src="./img/venta1.png" alt="70"/></i></div><h2 class="fs-4 fw-bold">Eficiencia</h2><p class="mb-0">Agilizando y ahorrando tiempo por medio de la gestión de inventario, seguimiento de clientes, etc.</p></div></div></div></div></div></section>';
+                
+                //ocultar Iframe
+                document.getElementById("miframe").style.display = "none";
+            });
             function Inicio() {
                 //Agregar Página de Bienvenida
-                document.getElementById('text').innerHTML = '<header class="py-5"> <div class="container px-lg-5"><div class="p-4 p-lg-5 bg-light rounded-3 text-center"><div class="m-4 m-lg-5"><h1 class="display-5 fw-bold">¡Bienvenido al sistema de ventas!</h1><img src="img/logo.png" width="200"/> <br><p class="fs-4">Bienvenidos al sistema de ventas más innovador y eficiente del mercado.Nuestra misión es simplificar y potenciar las operaciones comerciales, brindando a nuestros clientes una experiencia única y satisfactoria en cada transacción. Nos proyectamos como la solución integral y líder en la gestión de ventas, con una visión de ser reconocidos como el referente en tecnología de ventas, ofreciendo una plataforma intuitiva y escalable que impulse el crecimiento y éxito de nuestros usuarios. Únase a nosotros y descubra una nueva forma de impulsar su negocio hacia el éxito.</p></div></div></div></header><section class="pt-4" ><div class="container px-lg-5"><div class="row gx-lg-5"><div class="col-lg-6 col-auto-4 mb-5"><div class="card bg-light border-0 h-100"><div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0"><div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-cloud-download"><img src="img/venta3.png" alt="70"/></i></div><h2 class="fs-4 fw-bold">Ventas Intuitivas</h2><p class="mb-0">Sistema fácil de usar y comprender para los usuarios para interactuar de manera natural y sin dificultades.</p></div></div></div><div class="col-lg-6 col-auto-4 mb-5"><div class="card bg-light border-0 h-100"><div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0"><div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-cloud-download"><img src="img/venta1.png" alt="70"/></i></div><h2 class="fs-4 fw-bold">Eficiencia</h2><p class="mb-0">Agilizando y ahorrando tiempo por medio de la gestión de inventario, seguimiento de clientes, etc.</p></div></div></div></div></div></section>';
+                document.getElementById('text').innerHTML = '<header class="py-5"> <div class="container px-lg-5"><div class="p-4 p-lg-5 bg-light rounded-3 text-center"><div class="m-4 m-lg-5"><h1 class="display-5 fw-bold">¡Bienvenido al sistema de ventas!</h1><img src="img/logo.png" width="200"/> <br><p class="fs-4">Bienvenidos al sistema de ventas más innovador y eficiente del mercado.Nuestra misión es simplificar y potenciar las operaciones comerciales, brindando a nuestros clientes una experiencia única y satisfactoria en cada transacción. Nos proyectamos como la solución integral y líder en la gestión de ventas, con una visión de ser reconocidos como el referente en tecnología de ventas, ofreciendo una plataforma intuitiva y escalable que impulse el crecimiento y éxito de nuestros usuarios. Únase a nosotros y descubra una nueva forma de impulsar su negocio hacia el éxito.</p></div></div></div></header><section class="pt-4" ><div class="container px-lg-5"><div class="row gx-lg-5"><div class="col-lg-6 col-auto-4 mb-5"><div class="card bg-light border-0 h-100"><div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0"><div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4 py-3"><i><img src="./img/venta3.png" alt="70"/></i></div><h2 class="fs-4 fw-bold">Ventas Intuitivas</h2><p class="mb-0">Sistema fácil de usar y comprender para los usuarios para interactuar de manera natural y sin dificultades.</p></div></div></div><div class="col-lg-6 col-auto-4 mb-5"><div class="card bg-light border-0 h-100"><div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0"><div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4 py-3 px-3"><i><img src="./img/venta1.png" alt="70"/></i></div><h2 class="fs-4 fw-bold">Eficiencia</h2><p class="mb-0">Agilizando y ahorrando tiempo por medio de la gestión de inventario, seguimiento de clientes, etc.</p></div></div></div></div></div></section>';
 
                //Limpiar Iframe
                 var frame = window.frames['myFrame']; 
-                //frame.document.open(); 
-                //frame.document.close();
+                frame.document.open(); 
+                frame.document.close();
                 
-                //document.getElementsByName("iframe").style.visibility = "hidden";
                 //ocultar Iframe
-                document.getElementsByName("myFrame").style.display = "none";
-                 
+                document.getElementById("miframe").style.display = "none";
             }
             function eliminar() {
                 document.getElementById('text').innerHTML = '';
+                document.getElementById("miframe").style.display = "block";
             }
           </script>
     </head>
@@ -75,7 +81,7 @@
         
         <div class="container" class="m-2"style="height: 600px">
             <div align="center" id="text"></div>
-            <iframe name="myFrame" style="height: 100%; width: 100%; border: none"></iframe>
+            <iframe name="myFrame" style="height: 100%; width: 100%; border: none;" id="miframe"></iframe>
             <!-- Footer-->
             <footer class="py-5 bg-dark">
                 <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Sistema Web de ventas 2023</p></div>

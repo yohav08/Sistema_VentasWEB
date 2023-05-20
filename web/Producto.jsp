@@ -35,7 +35,7 @@
                             <input type="text" value="${producto.getEstado()}" name="txtEstado" class="form-control">
                         </div><br>
                         <div class="d-flex justify-content-between">
-                            <input style="margin-left: auto; margin-right: auto;" type="submit" name="accion" value="Agregar" class="col-sm-4 btn btn-info">
+                            <input style="margin-left: auto; margin-right: auto;" type="submit" name="accion" value="Agregar" class="col-sm-4 btn btn-primary">
                             <input style="margin-left: auto; margin-right: auto;" type="submit" name="accion" value="Actualizar" class=" col-sm-4 btn btn-success">
                         </div>
                     </form>
