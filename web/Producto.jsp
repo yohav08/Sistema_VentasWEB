@@ -15,9 +15,9 @@
     </head>
     <body>
         <div class="d-flex">
-            <div class="card col-sm-4">
+            <div style="margin: 15px;" class="card d-block col-sm-4">
                 <div class="card-body">
-                    <form action="Controlador?menu=Producto" method="POST">
+                    <form class="" action="Controlador?menu=Producto" method="POST">
                         <div class="form-group">
                             <label>Nombres</label>
                             <input type="text" value="${producto.getNom()}" name="txtNombres" class="form-control">
@@ -33,14 +33,15 @@
                         <div class="form-group">
                             <label>Estado</label>
                             <input type="text" value="${producto.getEstado()}" name="txtEstado" class="form-control">
+                        </div><br>
+                        <div class="d-flex justify-content-between">
+                            <input style="margin-left: auto; margin-right: auto;" type="submit" name="accion" value="Agregar" class="col-sm-4 btn btn-info">
+                            <input style="margin-left: auto; margin-right: auto;" type="submit" name="accion" value="Actualizar" class=" col-sm-4 btn btn-success">
                         </div>
-                         <br>
-                        <input type="submit" name="accion" value="Agregar" class="btn btn-info">
-                        <input type="submit" name="accion" value="Actualizar" class="btn btn-success">
                     </form>
                 </div>
             </div>
-            <div class="form-group col-sm-8">
+            <div style="margin: 15px;" class="d-block col-sm-7">
                 <table class="table table-hover">
                     <thead>
                         <tr>

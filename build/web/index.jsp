@@ -14,7 +14,7 @@
     </head>
     <body>
         <div class="container mt-4 col-lg-4">
-            <div class="card col-sm-10">
+            <div style="display: block; margin-left: auto; margin-right: auto;" class="card col-sm-10">
                 <div class="card-body">
                     <form class="form-sign" action="Validar" method="POST">
                         <div class="form-group text-center">
@@ -24,14 +24,14 @@
                         </div>
                         <div class="form-group">
                             <label>Usuario: </label>
-                            <input type="text" name="txtuser" class="form-control ">
+                            <input type="text" name="txtuser" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>Contraseña: </label>
                             <input type="password" name="txtpass" class="form-control">
                         </div>
                         <br>
-                        <input type="submit" name="accion" value="Ingresar" class=" text-center btn btn-primary btn btn-block">
+                        <input type="submit" style="display: block; margin-left: auto; margin-right: auto;" name="accion" value="Ingresar" class="col-sm-8 text-center btn btn-primary">
                     </form>
                 </div>
             </div>
