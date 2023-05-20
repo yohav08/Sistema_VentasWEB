@@ -22,57 +22,58 @@
     </head>
     <body>
         <div class="d-flex">
-            <div class="col-lg-4 parte01">
+            <div style="margin: 15px;" class="card d-block col-sm-4 parte01">
                 <div class="card">
                     <form action="Controlador?menu=NuevaVenta" method="POST">
                         <div class="card-body">
                             <div class="form-group">
                                 <label>Datos del Cliente</label>
                             </div>
-                            <div class="form-group d-flex">
-                                <div class="col-sm-6 d-flex">
-                                    <input type="text" name="codigocliente" value="${c.getDni()}" class="form-control" placeholder="Codigo">
-                                    <input type="submit" name="accion" value="BuscarCliente" class="btn btn-outline-info">
-                                </div>
-                                <div class="col-sm-6">
-                                    <input type="text" name="nombrescliente"  value="${c.getNom()}" class="form-control" placeholder="Datos Cliente">
+                            <div class="form-group">
+                                <div style="margin: 5px;" class="col-sm-6 d-flex">
+                                    <input style="margin: 1px;" type="text" name="codigocliente" value="${c.getDni()}" class="form-control" placeholder="Codigo">
+                                    <input style="margin: 1px;" type="submit" name="accion" value="BuscarCliente" class="btn btn-outline-info">
+                                </div> 
+                                <div style="margin: 5px;">
+                                    <input type="text" name="nombrescliente"  value="${c.getNom()}" class="form-control" placeholder="Datos Cliente" readonly>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label>Datos Producto</label>
                             </div>
-                            <div class="form-group d-flex">
+                            <div style="margin: 5px;" class="form-group">
                                 <div class="col-sm-6 d-flex">
-                                    <input type="text" name="codigoproducto" value="${producto.getId()}" class="form-control" placeholder="Codigo">
-                                    <button type="submit" name="accion" value="BuscarProducto" class="btn btn-outline-info">Buscar</button>
+                                    <input style="margin: 1px;" type="text" name="codigoproducto" value="${producto.getId()}" class="form-control" placeholder="Codigo">
+                                    <button style="margin: 1px;" type="submit" name="accion" value="BuscarProducto" class="btn btn-outline-info">Buscar</button>
                                 </div>
-                                <div class="col-sm-6">
-                                    <input type="text" name="nomproducto" value="${producto.getNom()}" class="form-control" placeholder="Datos Producto">
+                                <div style="margin-top: 5px;">
+                                    <input type="text" name="nomproducto" value="${producto.getNom()}" class="form-control" placeholder="Datos Producto" readonly>
                                 </div>
                             </div>
-                            <div class="form-group d-flex">
+                            <div style="margin: 5px;" class="form-group d-flex">
                                 <div class="col-sm-6 d-flex">
-                                    <input type="text" name="precio" value="${producto.getPrecio()}" class="form-control" placeholder="S/.0.00">
+                                    <input style="margin: 1px;" type="text" name="precio" value="${producto.getPrecio()}" class="form-control" placeholder="S/.0.00" readonly>
                                 </div>
                                 <div class="col-sm-3">
-                                    <input type="number" name="cant" value="1" placeholder="" class="form-control">
+                                    <input style="margin: 1px;" type="number" name="cant" value="1" placeholder="" class="form-control">
                                 </div>
                                 <div class="col-sm-3">
-                                    <input type="text" name="stock" value="${producto.getStock()}" placeholder="Stock" class="form-control">
+                                    <input style="margin: 1px;" type="text" name="stock" value="${producto.getStock()}" placeholder="Stock" class="form-control" readonly>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <button type="submit" name="accion" value="Agregar" class="btn btn-outline-info"> Agregar Producto</button>
+                            <div class="form-group d-flex justify-content-between"><br><br>
+                                <button style="margin-left: auto; margin-right: auto;" type="submit" name="accion" value="Agregar" class="btn btn-outline-info"> Agregar Producto</button>
+                                <button style="margin-left: auto; margin-right: auto;" type="submit" name="accion" value="Actualizar" class="btn btn-outline-info"> Actualizar</button>
                             </div>  
                         </div>
                     </form>
                 </div>
             </div>
             
-            <div class="col-sm-7">
-                <div class="card">
+            <div style="margin: 15px; border: none;" class="col-sm-7">
+                <div  style="border:  none;" class="card">
                     <div class="card-body">
-                        <div class="d-flex col-sm-6 ml-auto">
+                        <div class="d-flex col-sm-7 ml-auto">
                             <label>NumeroSerie</label>
                             <input type="text" name="NroSerie" value="${nserie}" class="form-control">
                         </div> <br>
@@ -98,8 +99,8 @@
                                     <td>${list.getCantidad()}</td> 
                                     <td>${list.getSubtotal()}</td> 
                                     <td class="d-flex">
-                                        <a href="" class="btn btn-warning">Editar</a>
-                                        <a href="" class="btn btn-danger" style="margin-left: 10 px">Delete</a>
+                                        <a href="Controlador?menu=NuevaVenta&accion=Editar&Item=${list.getItem()}" class="btn btn-warning" style="margin-left: auto; margin-right: auto;">Editar</a>
+                                        <a href="Controlador?menu=NuevaVenta&accion=Delete&Item=${list.getItem()}" class="btn btn-danger" style="margin-left: auto; margin-right: auto;">Delete</a>
                                     </td> 
                                 </tr>
                                 </c:forEach>
@@ -112,7 +113,7 @@
                             <input type="submit" name="accion" value="Cancelar" class="btn btn-danger">
                         </div>
                         <div class="col-sm-4 ml-auto">
-                            <input type="text" name="txtTotal" value="S/. ${totalPagar}0" class="form-control">
+                            <input type="text" name="txtTotal" value="S/. ${totalPagar}0" class="col-lg-4 form-control">
                         </div>
                     </div>
                 </div>

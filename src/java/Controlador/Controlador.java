@@ -246,6 +246,32 @@ public class Controlador extends HttpServlet {
                     request.setAttribute("nserie", numeroserie);
                 break;
                 
+                case "Editar":
+                    //recorrer la lista
+                    for (int i = 0; i < lista.size(); i++) {
+                        System.out.println("Método editar producto: "+ lista.get(i).getId());
+                    }
+                break;
+                case "Delete":
+                    //recorrer lista
+                    
+                    totalPagar = 0.0;
+                    
+                    int itemv= Integer.parseInt(request.getParameter("Item")); 
+                    
+                    for (int i = 0; i < lista.size(); i++) {
+                        if (lista.get(i).getItem().equals(itemv)) {
+                            lista.remove(i);
+                        }
+                    }
+                    for (int i = 0; i < lista.size(); i++) {
+                        totalPagar = totalPagar + lista.get(i).getSubtotal();
+                    }
+                    request.setAttribute("c", c);
+                    request.setAttribute("totalPagar", totalPagar);
+                    request.setAttribute("lista", lista);
+                break;
+                             
                 case "GenerarVenta":
                     //actualiza  stock
                     for(int i = 0; i < lista.size(); i++){
