@@ -49,6 +49,8 @@ public class Controlador extends HttpServlet {
     int cant;
     double subtotal;
     double totalPagar;
+    int Item;
+    int idpr;
     
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -247,16 +249,46 @@ public class Controlador extends HttpServlet {
                 break;
                 
                 case "Editar":
-                    //recorrer la lista
-                    for (int i = 0; i < lista.size(); i++) {
-                        System.out.println("Método editar producto: "+ lista.get(i).getId());
-                    }
-                break;
-                case "Delete":
-                    //recorrer lista
+                    Item = Integer.parseInt(request.getParameter("Item"));
+                    idpr = Integer.parseInt(request.getParameter("idp"));
+                    Producto producto = pdao.listarId(idpr);
                     
+                    request.setAttribute("c", c);
+                    request.setAttribute("producto", producto);
+                    request.setAttribute("lista", lista);
+                    request.setAttribute("totalPagar", totalPagar);
+                    
+                break;
+                
+                case "Actualizar":
+                    request.setAttribute("c", c);
                     totalPagar = 0.0;
                     
+                    for (int i = 0; i < lista.size(); i++) {
+                        if (lista.get(i).getItem().equals(Item)) 
+                        {
+                            lista.get(i).setIdproducto(Integer.parseInt(request.getParameter("codigoproducto")));
+                            lista.get(i).setDescripcionP(request.getParameter("nomproducto"));
+                            precio = Double.parseDouble(request.getParameter("precio"));
+                            cant = Integer.parseInt(request.getParameter("cant"));
+                            lista.get(i).setPrecio(precio);
+                            lista.get(i).setCantidad(cant);
+                            
+                            double subtt = (cant * precio);
+                            lista.get(i).setSubtotal(subtt);
+                        }
+                    }
+                    for (int i = 0; i < lista.size(); i++) {
+                        totalPagar = totalPagar + lista.get(i).getSubtotal();
+                    }
+                    request.setAttribute("totalPagar", totalPagar);
+                    request.setAttribute("lista", lista);
+                    request.setAttribute("nserie", numeroserie);
+                break;
+                
+                case "Delete":
+                    //recorrer lista
+                    totalPagar = 0.0;
                     int itemv= Integer.parseInt(request.getParameter("Item")); 
                     
                     for (int i = 0; i < lista.size(); i++) {
