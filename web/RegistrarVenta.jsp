@@ -14,7 +14,7 @@
         <title>Ventas</title>
         <style>
             @media print{
-                .parte01, .btn, .accion{
+                .parte01 , .btn , .accion {
                     display: none;
                 }
             }
@@ -22,8 +22,8 @@
     </head>
     <body>
         <div class="d-flex">
-            <div style="margin: 15px;" class="parte01 card d-block col-sm-4">
-                <div class="card">
+            <div style="margin: 15px;" class="card d-block col-sm-4 parte01">
+                <div class="card parte01">
                     <form action="Controlador?menu=NuevaVenta" method="POST">
                         <div class="card-body">
                             <div class="form-group ">
@@ -71,7 +71,7 @@
                 </div>
             </div>
             
-            <div style="margin: 15px; border: none;" class="col-sm-7">
+            <div style="margin: 15px; border: none;" class="col-sm-7 parte02">
                 <div  style="border:  none;" class="card">
                     <div class="card-body">
                         <div class="d-flex col-sm-7 ml-auto">
