@@ -72,7 +72,7 @@
                         <li><a class="dropdown-item" href="#">usuario@gmail.com</a></li>
                         <div class="dropdown-divider"></div>
                         <form action="Validar" method="POST">
-                            <button name="accion" value="Salir" class="dropdown-item" href="#">Salir</button>
+                            <button id="accion" value="Salir" class="dropdown-item" href="#">Salir</button>
                         </form>
                     </ul>
                 </div>
