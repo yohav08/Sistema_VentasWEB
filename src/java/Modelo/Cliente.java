@@ -56,5 +56,14 @@ public class Cliente {
     public void setEstado(String Estado) {
         this.Estado = Estado;
     }
-}
 
+    @Override
+    public String toString() {
+        return "Cliente:" + 
+                "\nId=" + Id + 
+                "\nDni=" + Dni + 
+                "\nNom=" + Nom + 
+                "\nDireccion=" + Direccion + 
+                "\nEstado=" + Estado ;
+    }  
+}

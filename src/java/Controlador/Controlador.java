@@ -28,20 +28,21 @@ import java.util.List;
  */
 public class Controlador extends HttpServlet {
     
-    Empleado em = new Empleado();
-    EmpleadoDAO edao = new EmpleadoDAO();
     Cliente c = new Cliente();
     ClienteDAO cdao = new ClienteDAO();
+    Empleado em = new Empleado();
+    EmpleadoDAO edao = new EmpleadoDAO();
     Producto pr =  new Producto();
     ProductoDAO pdao = new ProductoDAO();
-    String numeroserie;
+    Venta v = new Venta(); 
     VentaDAO vdao = new VentaDAO();
+    List<Venta> lista = new ArrayList<>();
+    
+    String numeroserie;
     int ide;
     int idc;
     int idp;
     
-    Venta v = new Venta(); 
-    List<Venta> lista = new ArrayList<>();
     int item;
     int cod;
     String descripcion;

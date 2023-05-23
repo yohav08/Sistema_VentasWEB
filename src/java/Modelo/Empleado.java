@@ -71,5 +71,15 @@ public class Empleado {
     public void setUser(String user) {
         this.user = user;
     }
-        
+
+    @Override
+    public String toString() {
+        return "Empleado: " + 
+                "\nid=" + id + 
+                "\ndni=" + dni + 
+                "\nnom=" + nom + 
+                "\ntel=" + tel + 
+                "\nestado=" + estado + 
+                "\nuser=" + user;
+    }
 }

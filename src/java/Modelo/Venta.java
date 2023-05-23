@@ -145,7 +145,24 @@ public class Venta {
     public void setEstado(String estado) {
         this.estado = estado;
     }
-    
+
+    @Override
+    public String toString() {
+        return "Venta: " + 
+                "\nid=" + id + 
+                "\nitem=" + item + 
+                "\nidcliente=" + idcliente + 
+                "\nidempleado=" + idempleado + 
+                "\nidproducto=" + idproducto + 
+                "\nNumserie=" + Numserie + 
+                "\nDescripcionP=" + DescripcionP + 
+                "\nfecha=" + fecha + 
+                "\nprecio=" + precio + 
+                "\ncantidad=" + cantidad + 
+                "\nsubtotal=" + subtotal + 
+                "\nmonto=" + monto + 
+                "\nestado=" + estado;
+    }
     
     
 }

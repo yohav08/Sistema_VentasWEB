@@ -55,4 +55,14 @@ public class Producto {
     public void setEstado(String estado) {
         this.estado = estado;
     }
+
+    @Override
+    public String toString() {
+        return "Producto: " + 
+                "\nid=" + id + 
+                "\nnom=" + nom + 
+                "\nprecio=" + precio + 
+                "\nstock=" + stock + 
+                "\nestado=" + estado ;
+    }
 }

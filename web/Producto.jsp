@@ -51,7 +51,6 @@
                             <th>STOCK</th>
                             <th>ESTADO</th>
                             <th>ACCIONES</th>
-
                         </tr>
                     </thead>
                     <tbody>
